@@ -11,7 +11,9 @@ var baseUrl = process.env.NPM_CONFIG_ELECTRON_MIRROR ||
   process.env.electron_mirror ||
   'https://github.com/electron/electron/releases/download/v'
 
-var proxy = process.env.NPM_CONFIG_HTTPS_PROXY ||
+var proxy = process.env.http_proxy ||
+  process.env.https_proxy ||
+  process.env.NPM_CONFIG_HTTPS_PROXY ||
   process.env.npm_config_https_proxy ||
   process.env.NPM_CONFIG_PROXY ||
   process.env.npm_config_proxy
